@@ -23,7 +23,10 @@ class TenancyScope implements Scope
     {
         // TODO: Implement apply() method.
 
-        $companyId = Auth::user()->company_id;
-        $builder->where('company_id', $companyId);
+        $company = Tenant::getTenant();
+        if($company) {
+//          $companyId = Auth::user()->company_id;
+            $builder->where('company_id', $company->id);
+        }
     }
 }
