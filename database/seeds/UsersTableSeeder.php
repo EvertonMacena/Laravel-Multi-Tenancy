@@ -13,13 +13,13 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        Tenant::setTenant(Company::find(1));
+        \Tenant::setTenant(Company::find(1));
         factory(User::class, 1)
             ->create([
                 'email' => 'user1@user.com',
             ]);
 
-        Tenant::setTenant(Company::find(2));
+        \Tenant::setTenant(Company::find(2));
         factory(User::class, 1)
             ->create([
                 'email' => 'user2@user.com',

@@ -13,7 +13,7 @@ class ProductsTableSeeder extends Seeder
      */
     public function run()
     {
-        Tenant::setTenant(null);
+        \Tenant::setTenant(null);
         $categories = Category::all();
         factory(Product::class, 100)
             ->make()
