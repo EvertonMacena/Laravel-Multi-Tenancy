@@ -1,5 +1,7 @@
 <?php
 
+use App\Category;
+use App\Company;
 use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
@@ -11,6 +13,10 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        Tenant::setTenant(Company::find(1));
+        factory(Category::class, 50)->create();
+
+        Tenant::setTenant(Company::find(2));
+        factory(Category::class, 50)->create();
     }
 }
