@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Company extends Model
 {
-    use TenantModels;
+//    use TenantModels;
 
     protected $fillable = ['name'];
 }
